@@ -1,11 +1,14 @@
 import express from "express";
 import { connectDB } from "./db.js";
 import { Card } from "./models/Cards.js";
+import cors from "cors";
 const app = express();
 connectDB();
 //app representa el servidor
 
 app.use(express.json());
+app.use(cors());
+
 const card = await Card;
 
 //CREATE CARD
